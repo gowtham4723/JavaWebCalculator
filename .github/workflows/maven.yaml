@@ -7,10 +7,11 @@ on:
   pull_request:
     branches:
       - master
+   Workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: linux
 
     steps:
       - name: Checkout code
@@ -25,3 +26,4 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
         working-directory: JavaWebCalculator
+
